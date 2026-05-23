@@ -1,4 +1,5 @@
 front/
+private/
 comprimidos/
 node_modules/
 dist/
