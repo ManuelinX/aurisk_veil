@@ -1,0 +1,56 @@
+input: "./dist"
+output: "./dist.veil"
+
+random:
+  minLength: 8
+  maxLength: 14
+  alphabet: "base62"
+  preserveExtension: true
+  avoidAmbiguousChars: true
+
+rename:
+  files: true
+  directories: true
+  preserveEntryFiles:
+    - "index.html"
+    - "favicon.ico"
+    - "robots.txt"
+    - "sitemap.xml"
+    - "manifest.webmanifest"
+    - "service-worker.js"
+    - "sw.js"
+  preservePatterns:
+    - "*.map"
+    - ".well-known/**"
+
+rewrite:
+  js: true
+  html: true
+  css: true
+  json: true
+  webmanifest: true
+  ignorePrefixes:
+    - "/api"
+    - "/auth"
+    - "/graphql"
+    - "/socket.io"
+
+aliases:
+  readTsconfig: true
+  readJsconfig: true
+  custom:
+    "@": "./src"
+    "@assets": "./src/assets"
+
+dynamicRoutes:
+  mode: "warn"
+
+sourcemaps:
+  mode: "delete"
+
+safety:
+  dryRun: false
+  failOnBrokenReferences: false
+  generateReport: true
+  generatePrivateMap: true
+  reportDir: ".aurisk"

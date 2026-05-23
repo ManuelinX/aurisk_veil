@@ -1,0 +1,36 @@
+{
+  "name": "aurisk-veil",
+  "version": "0.1.0",
+  "description": "Post-build asset and path obfuscator for static web builds.",
+  "type": "module",
+  "bin": {
+    "aurisk": "./dist/cli.js"
+  },
+  "scripts": {
+    "dev": "tsx src/cli.ts",
+    "build": "tsc",
+    "start": "node dist/cli.js",
+    "test:sample": "npm run build && node dist/cli.js veil examples/dist --out examples/dist.veil --min 8 --max 12 --yes"
+  },
+  "keywords": [
+    "obfuscator",
+    "build",
+    "assets",
+    "cli"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@inquirer/prompts": "^7.3.3",
+    "commander": "^13.1.0",
+    "yaml": "^2.7.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3"
+  },
+  "engines": {
+    "node": ">=20.9.0"
+  }
+}
