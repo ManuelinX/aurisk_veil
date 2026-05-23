@@ -1,0 +1,7 @@
+front/
+comprimidos/
+node_modules/
+dist/
+examples/dist.veil/
+.aurisk/
+*.log
